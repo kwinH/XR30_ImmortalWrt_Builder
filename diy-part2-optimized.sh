@@ -650,7 +650,7 @@ function configure_custom_applications() {
     config_package_add "luci-app-mentohust"     # MentoHust WebUI
     
     # Advanced routing and proxy
-    config_package_add "luci-app-daed"          # Daed WebUI
+    # config_package_add "luci-app-daed"          # Daed WebUI
     
     # Configure kernel options for Daed (eBPF support)
     configure_daed_kernel_options

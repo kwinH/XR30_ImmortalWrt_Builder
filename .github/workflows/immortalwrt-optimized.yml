@@ -389,7 +389,7 @@ jobs:
                 ls -la $GITHUB_WORKSPACE/debug-logs
                 echo ""
 
-                cat /workdir/openwrt/build-error.log    
+                # cat /workdir/openwrt/build-error.log    
                           
                 echo "✅ Debug information collection completed"
 
