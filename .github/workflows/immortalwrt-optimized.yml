@@ -323,7 +323,11 @@ jobs:
                 ) &
                 
                 # Optimized build process
-                make -j${JOBS} 2> >(tee build-error.log) >/dev/null || make -j1 2> >(tee -a build-error.log) >/dev/null || make -j1 V=s 2> >(tee -a build-error.log) >/dev/null
+                # make -j${JOBS} 2> >(tee build-error.log) >/dev/null || make -j1 2> >(tee -a build-error.log) >/dev/null || make -j1 V=s 2> >(tee -a build-error.log) >/dev/null
+                 make -j"$JOBS" V=s || {
+                 echo "⚠️  并行编译失败，尝试单线程编译..."
+                 make -j1 V=s
+                 }
                 
                 # Calculate build time
                 BUILD_END=$(date +%s)
